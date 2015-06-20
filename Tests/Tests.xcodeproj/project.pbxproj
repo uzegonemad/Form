@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14153BA11B34C59F0016A76B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14153BA01B34C59F0016A76B /* AppDelegate.swift */; };
+		14153BA31B34C59F0016A76B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14153BA21B34C59F0016A76B /* Images.xcassets */; };
+		14153BA61B34C59F0016A76B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14153BA41B34C59F0016A76B /* LaunchScreen.xib */; };
+		14153BBA1B34C5D80016A76B /* SampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14153BB91B34C5D80016A76B /* SampleController.swift */; };
 		14298D6E1ADDA78F00607A49 /* FORMValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14298D6D1ADDA78F00607A49 /* FORMValidatorTests.m */; };
 		143D89451AEE46CC00F17FF5 /* FORMFieldValuesTableViewHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D89441AEE46CC00F17FF5 /* FORMFieldValuesTableViewHeaderTests.swift */; };
 		1440AF0D1AC1D76500F15D15 /* FORMGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1440AF0C1AC1D76500F15D15 /* FORMGroupTests.m */; };
@@ -77,6 +81,55 @@
 		14B564731A06D87B00342CDA /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 14B564721A06D87B00342CDA /* .travis.yml */; };
 		14C4183D1A019A1500636FD6 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 14C418391A019A1500636FD6 /* LICENSE.md */; };
 		14C4183E1A019A1500636FD6 /* FORM.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 14C4183A1A019A1500636FD6 /* FORM.podspec */; };
+		14DB62391B35448D001CEBA1 /* FORMBaseFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28521A99B2CF004A9086 /* FORMBaseFieldCell.m */; };
+		14DB623A1B35448D001CEBA1 /* FORMButtonFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28551A99B2CF004A9086 /* FORMButtonFieldCell.m */; };
+		14DB623B1B35448D001CEBA1 /* FORMDateFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28581A99B2CF004A9086 /* FORMDateFieldCell.m */; };
+		14DB623C1B35448D001CEBA1 /* FORMFieldValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A285A1A99B2CF004A9086 /* FORMFieldValueCell.m */; };
+		14DB623D1B35448D001CEBA1 /* FORMFieldValuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A285C1A99B2CF004A9086 /* FORMFieldValuesTableViewController.m */; };
+		14DB623E1B35448D001CEBA1 /* FORMFieldValuesTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A285E1A99B2CF004A9086 /* FORMFieldValuesTableViewHeader.m */; };
+		14DB623F1B35448D001CEBA1 /* FORMPopoverFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28601A99B2CF004A9086 /* FORMPopoverFieldCell.m */; };
+		14DB62401B35448D001CEBA1 /* FORMSelectFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28621A99B2CF004A9086 /* FORMSelectFieldCell.m */; };
+		14DB62411B35448D001CEBA1 /* FORMTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28651A99B2CF004A9086 /* FORMTextFieldCell.m */; };
+		14DB62421B35448D001CEBA1 /* FORMFieldValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A286A1A99B2CF004A9086 /* FORMFieldValueLabel.m */; };
+		14DB62431B35448D001CEBA1 /* FORMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A286C1A99B2CF004A9086 /* FORMTextField.m */; };
+		14DB62441B35448D001CEBA1 /* FORMTextFieldTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A286E1A99B2CF004A9086 /* FORMTextFieldTypeManager.m */; };
+		14DB62451B35448D001CEBA1 /* FORMBankAccountNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28711A99B2CF004A9086 /* FORMBankAccountNumberFormatter.m */; };
+		14DB62461B35448D001CEBA1 /* FORMFloatFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28731A99B2CF004A9086 /* FORMFloatFormatter.m */; };
+		14DB62471B35448D001CEBA1 /* FORMFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28751A99B2CF004A9086 /* FORMFormatter.m */; };
+		14DB62481B35448D001CEBA1 /* FORMPhoneNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28771A99B2CF004A9086 /* FORMPhoneNumberFormatter.m */; };
+		14DB62491B35448D001CEBA1 /* FORMSocialSecurityNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28791A99B2CF004A9086 /* FORMSocialSecurityNumberFormatter.m */; };
+		14DB624A1B35448D001CEBA1 /* FORMEmailFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B56C061AE51C7800DD8816 /* FORMEmailFormatter.m */; };
+		14DB624B1B35448D001CEBA1 /* FORMBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A287B1A99B2CF004A9086 /* FORMBackgroundView.m */; };
+		14DB624C1B35448D001CEBA1 /* FORMData.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28811A99B2CF004A9086 /* FORMData.m */; };
+		14DB624D1B35448D001CEBA1 /* FORMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A287D1A99B2CF004A9086 /* FORMDataSource.m */; };
+		14DB624E1B35448D001CEBA1 /* FORMDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1452EB611AA9BCFC0002863A /* FORMDefaultStyle.m */; };
+		14DB624F1B35448D001CEBA1 /* FORMGroupHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28831A99B2CF004A9086 /* FORMGroupHeaderView.m */; };
+		14DB62501B35448D001CEBA1 /* FORMLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A287F1A99B2CF004A9086 /* FORMLayout.m */; };
+		14DB62511B35448D001CEBA1 /* FORMSeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AFC1101AA7CF5C00583FC0 /* FORMSeparatorView.m */; };
+		14DB62521B35448D001CEBA1 /* FORMTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5845741AC4074600596C62 /* FORMTooltipView.m */; };
+		14DB62531B35448D001CEBA1 /* FORMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 446C42651AF8B38F0002DFE9 /* FORMViewController.m */; };
+		14DB62541B35448D001CEBA1 /* FORMBankAccountNumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28881A99B2CF004A9086 /* FORMBankAccountNumberInputValidator.m */; };
+		14DB62551B35448D001CEBA1 /* FORMFloatInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A288A1A99B2CF004A9086 /* FORMFloatInputValidator.m */; };
+		14DB62561B35448D001CEBA1 /* FORMInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A288C1A99B2CF004A9086 /* FORMInputValidator.m */; };
+		14DB62571B35448D001CEBA1 /* FORMNameInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A288E1A99B2CF004A9086 /* FORMNameInputValidator.m */; };
+		14DB62581B35448D001CEBA1 /* FORMNumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28901A99B2CF004A9086 /* FORMNumberInputValidator.m */; };
+		14DB62591B35448D001CEBA1 /* FORMPhoneNumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28921A99B2CF004A9086 /* FORMPhoneNumberInputValidator.m */; };
+		14DB625A1B35448D001CEBA1 /* FORMPostalCodeInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28941A99B2CF004A9086 /* FORMPostalCodeInputValidator.m */; };
+		14DB625B1B35448D001CEBA1 /* FORMSocialSecurityNumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28961A99B2CF004A9086 /* FORMSocialSecurityNumberInputValidator.m */; };
+		14DB625C1B35448D001CEBA1 /* FORMClassFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28991A99B2CF004A9086 /* FORMClassFactory.m */; };
+		14DB625D1B35448D001CEBA1 /* FORMField.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A289B1A99B2CF004A9086 /* FORMField.m */; };
+		14DB625E1B35448D001CEBA1 /* FORMFieldValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A289D1A99B2CF004A9086 /* FORMFieldValidation.m */; };
+		14DB625F1B35448D001CEBA1 /* FORMFieldValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A289F1A99B2CF004A9086 /* FORMFieldValue.m */; };
+		14DB62601B35448D001CEBA1 /* FORMGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28A11A99B2CF004A9086 /* FORMGroup.m */; };
+		14DB62611B35448D001CEBA1 /* FORMSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28A31A99B2CF004A9086 /* FORMSection.m */; };
+		14DB62621B35448D001CEBA1 /* FORMTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28A51A99B2CF004A9086 /* FORMTarget.m */; };
+		14DB62631B35448D001CEBA1 /* DDMathEvaluator+FORM.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28A81A99B2CF004A9086 /* DDMathEvaluator+FORM.m */; };
+		14DB62641B35448D001CEBA1 /* FORMPostalCodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB7E31E1AA7016D00AF00BC /* FORMPostalCodeManager.m */; };
+		14DB62651B35448D001CEBA1 /* UIDevice+HYPRealOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28AE1A99B2CF004A9086 /* UIDevice+HYPRealOrientation.m */; };
+		14DB62661B35448D001CEBA1 /* FORMBankAccountNumberValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28B31A99B2CF004A9086 /* FORMBankAccountNumberValidator.m */; };
+		14DB62671B35448D001CEBA1 /* FORMPostalCodeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28B51A99B2CF004A9086 /* FORMPostalCodeValidator.m */; };
+		14DB62681B35448D001CEBA1 /* FORMSocialSecurityNumberValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28B71A99B2CF004A9086 /* FORMSocialSecurityNumberValidator.m */; };
+		14DB62691B35448D001CEBA1 /* FORMValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28B91A99B2CF004A9086 /* FORMValidator.m */; };
 		14F594A31AE0618300772756 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F5949F1AE0618300772756 /* calendar@2x.png */; };
 		14F594A41AE0618300772756 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F594A01AE0618300772756 /* clock@2x.png */; };
 		14F594A51AE0618300772756 /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F594A11AE0618300772756 /* arrow_down@2x.png */; };
@@ -94,6 +147,7 @@
 		BD5845751AC4074600596C62 /* FORMTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5845741AC4074600596C62 /* FORMTooltipView.m */; };
 		BD92FBDA1AE61FF000D45BD4 /* dynamic-formulas.json in Resources */ = {isa = PBXBuildFile; fileRef = BD92FBD91AE61FF000D45BD4 /* dynamic-formulas.json */; };
 		BDB7E31F1AA7016D00AF00BC /* FORMPostalCodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB7E31E1AA7016D00AF00BC /* FORMPostalCodeManager.m */; };
+		BDE0F89FBADD4640425A0C0E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E09ABAE07DB25A266537B76 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5B56C071AE51C7800DD8816 /* FORMEmailFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B56C061AE51C7800DD8816 /* FORMEmailFormatter.m */; };
 		D5B56C0A1AE52F8500DD8816 /* FORMEmailFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B56C091AE52F8500DD8816 /* FORMEmailFormatterTests.m */; };
 		D5DFAA1B1AA87A9B0096FBFB /* FORMFieldValidationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAA1A1AA87A9B0096FBFB /* FORMFieldValidationTests.m */; };
@@ -101,6 +155,13 @@
 
 /* Begin PBXFileReference section */
 		0F976971F56B077A5DA2E58E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		140DC19B1B35406800CBA3B1 /* App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
+		14153B9C1B34C59F0016A76B /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14153B9F1B34C59F0016A76B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14153BA01B34C59F0016A76B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14153BA21B34C59F0016A76B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		14153BA51B34C59F0016A76B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		14153BB91B34C5D80016A76B /* SampleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleController.swift; sourceTree = "<group>"; };
 		14298D6D1ADDA78F00607A49 /* FORMValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FORMValidatorTests.m; sourceTree = "<group>"; };
 		143D89441AEE46CC00F17FF5 /* FORMFieldValuesTableViewHeaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FORMFieldValuesTableViewHeaderTests.swift; sourceTree = "<group>"; };
 		1440AF0C1AC1D76500F15D15 /* FORMGroupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FORMGroupTests.m; sourceTree = "<group>"; };
@@ -251,6 +312,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		14153B991B34C59F0016A76B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE0F89FBADD4640425A0C0E /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14C418231A01919C00636FD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,6 +331,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14153B9D1B34C59F0016A76B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				140DC19B1B35406800CBA3B1 /* App-Bridging-Header.h */,
+				14153BA01B34C59F0016A76B /* AppDelegate.swift */,
+				14153BB91B34C5D80016A76B /* SampleController.swift */,
+				14153BA21B34C59F0016A76B /* Images.xcassets */,
+				14153BA41B34C59F0016A76B /* LaunchScreen.xib */,
+				14153B9E1B34C59F0016A76B /* Supporting Files */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		14153B9E1B34C59F0016A76B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14153B9F1B34C59F0016A76B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		144A284F1A99B2CF004A9086 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +554,7 @@
 				14F5949E1AE0618300772756 /* Assets */,
 				14C418371A01974300636FD6 /* Source */,
 				14C4182A1A01919C00636FD6 /* Tests */,
+				14153B9D1B34C59F0016A76B /* App */,
 				14C4181C1A01919C00636FD6 /* Products */,
 				5BA0FE3E15727FEB3A877CB7 /* Pods */,
 				B49F68CCC7CDB91DBD7BBB43 /* Frameworks */,
@@ -474,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				14C418261A01919C00636FD6 /* Tests.xctest */,
+				14153B9C1B34C59F0016A76B /* App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -597,6 +689,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		14153B9B1B34C59F0016A76B /* App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14153BB71B34C59F0016A76B /* Build configuration list for PBXNativeTarget "App" */;
+			buildPhases = (
+				B4A8F1B432228AFCF0D8641B /* Check Pods Manifest.lock */,
+				14153B981B34C59F0016A76B /* Sources */,
+				14153B991B34C59F0016A76B /* Frameworks */,
+				14153B9A1B34C59F0016A76B /* Resources */,
+				F03FCC1B087F90C37A084C13 /* Embed Pods Frameworks */,
+				69A13B6F2F388C5211CE2BC1 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = App;
+			productName = App;
+			productReference = 14153B9C1B34C59F0016A76B /* App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		14C418251A01919C00636FD6 /* Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14C418341A01919C00636FD6 /* Build configuration list for PBXNativeTarget "Tests" */;
@@ -623,9 +735,13 @@
 		14C418121A01919C00636FD6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Hyper;
 				TargetAttributes = {
+					14153B9B1B34C59F0016A76B = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					14C418251A01919C00636FD6 = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -637,6 +753,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 14C418111A01919C00636FD6;
 			productRefGroup = 14C4181C1A01919C00636FD6 /* Products */;
@@ -644,11 +761,21 @@
 			projectRoot = "";
 			targets = (
 				14C418251A01919C00636FD6 /* Tests */,
+				14153B9B1B34C59F0016A76B /* App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		14153B9A1B34C59F0016A76B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14153BA61B34C59F0016A76B /* LaunchScreen.xib in Resources */,
+				14153BA31B34C59F0016A76B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14C418241A01919C00636FD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -698,6 +825,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		69A13B6F2F388C5211CE2BC1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A2EDF5FFF9061B8DA45F541A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -728,9 +870,97 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B4A8F1B432228AFCF0D8641B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F03FCC1B087F90C37A084C13 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		14153B981B34C59F0016A76B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14DB62391B35448D001CEBA1 /* FORMBaseFieldCell.m in Sources */,
+				14DB623A1B35448D001CEBA1 /* FORMButtonFieldCell.m in Sources */,
+				14DB623B1B35448D001CEBA1 /* FORMDateFieldCell.m in Sources */,
+				14DB623C1B35448D001CEBA1 /* FORMFieldValueCell.m in Sources */,
+				14DB623D1B35448D001CEBA1 /* FORMFieldValuesTableViewController.m in Sources */,
+				14DB623E1B35448D001CEBA1 /* FORMFieldValuesTableViewHeader.m in Sources */,
+				14DB623F1B35448D001CEBA1 /* FORMPopoverFieldCell.m in Sources */,
+				14DB62401B35448D001CEBA1 /* FORMSelectFieldCell.m in Sources */,
+				14DB62411B35448D001CEBA1 /* FORMTextFieldCell.m in Sources */,
+				14DB62421B35448D001CEBA1 /* FORMFieldValueLabel.m in Sources */,
+				14DB62431B35448D001CEBA1 /* FORMTextField.m in Sources */,
+				14DB62441B35448D001CEBA1 /* FORMTextFieldTypeManager.m in Sources */,
+				14DB62451B35448D001CEBA1 /* FORMBankAccountNumberFormatter.m in Sources */,
+				14DB62461B35448D001CEBA1 /* FORMFloatFormatter.m in Sources */,
+				14DB62471B35448D001CEBA1 /* FORMFormatter.m in Sources */,
+				14DB62481B35448D001CEBA1 /* FORMPhoneNumberFormatter.m in Sources */,
+				14DB62491B35448D001CEBA1 /* FORMSocialSecurityNumberFormatter.m in Sources */,
+				14DB624A1B35448D001CEBA1 /* FORMEmailFormatter.m in Sources */,
+				14DB624B1B35448D001CEBA1 /* FORMBackgroundView.m in Sources */,
+				14DB624C1B35448D001CEBA1 /* FORMData.m in Sources */,
+				14DB624D1B35448D001CEBA1 /* FORMDataSource.m in Sources */,
+				14DB624E1B35448D001CEBA1 /* FORMDefaultStyle.m in Sources */,
+				14DB624F1B35448D001CEBA1 /* FORMGroupHeaderView.m in Sources */,
+				14DB62501B35448D001CEBA1 /* FORMLayout.m in Sources */,
+				14DB62511B35448D001CEBA1 /* FORMSeparatorView.m in Sources */,
+				14DB62521B35448D001CEBA1 /* FORMTooltipView.m in Sources */,
+				14DB62531B35448D001CEBA1 /* FORMViewController.m in Sources */,
+				14DB62541B35448D001CEBA1 /* FORMBankAccountNumberInputValidator.m in Sources */,
+				14DB62551B35448D001CEBA1 /* FORMFloatInputValidator.m in Sources */,
+				14DB62561B35448D001CEBA1 /* FORMInputValidator.m in Sources */,
+				14DB62571B35448D001CEBA1 /* FORMNameInputValidator.m in Sources */,
+				14DB62581B35448D001CEBA1 /* FORMNumberInputValidator.m in Sources */,
+				14DB62591B35448D001CEBA1 /* FORMPhoneNumberInputValidator.m in Sources */,
+				14DB625A1B35448D001CEBA1 /* FORMPostalCodeInputValidator.m in Sources */,
+				14DB625B1B35448D001CEBA1 /* FORMSocialSecurityNumberInputValidator.m in Sources */,
+				14DB625C1B35448D001CEBA1 /* FORMClassFactory.m in Sources */,
+				14DB625D1B35448D001CEBA1 /* FORMField.m in Sources */,
+				14DB625E1B35448D001CEBA1 /* FORMFieldValidation.m in Sources */,
+				14DB625F1B35448D001CEBA1 /* FORMFieldValue.m in Sources */,
+				14DB62601B35448D001CEBA1 /* FORMGroup.m in Sources */,
+				14DB62611B35448D001CEBA1 /* FORMSection.m in Sources */,
+				14DB62621B35448D001CEBA1 /* FORMTarget.m in Sources */,
+				14DB62631B35448D001CEBA1 /* DDMathEvaluator+FORM.m in Sources */,
+				14DB62641B35448D001CEBA1 /* FORMPostalCodeManager.m in Sources */,
+				14DB62651B35448D001CEBA1 /* UIDevice+HYPRealOrientation.m in Sources */,
+				14DB62661B35448D001CEBA1 /* FORMBankAccountNumberValidator.m in Sources */,
+				14DB62671B35448D001CEBA1 /* FORMPostalCodeValidator.m in Sources */,
+				14DB62681B35448D001CEBA1 /* FORMSocialSecurityNumberValidator.m in Sources */,
+				14DB62691B35448D001CEBA1 /* FORMValidator.m in Sources */,
+				14153BA11B34C59F0016A76B /* AppDelegate.swift in Sources */,
+				14153BBA1B34C5D80016A76B /* SampleController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14C418221A01919C00636FD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -805,7 +1035,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		14153BA41B34C59F0016A76B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14153BA51B34C59F0016A76B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		14153BB31B34C59F0016A76B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F976971F56B077A5DA2E58E /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		14153BB41B34C59F0016A76B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 653AC6BBDF66E205BA44BA17 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/App-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
 		14C4182F1A01919C00636FD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -934,6 +1213,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		14153BB71B34C59F0016A76B /* Build configuration list for PBXNativeTarget "App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14153BB31B34C59F0016A76B /* Debug */,
+				14153BB41B34C59F0016A76B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		14C418151A01919C00636FD6 /* Build configuration list for PBXProject "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

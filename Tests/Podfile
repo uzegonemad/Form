@@ -1,5 +1,7 @@
 use_frameworks!
 
+link_with 'App', 'Tests'
+
 pod 'Hex'
 pod 'HYP8601'
 pod 'HYPImagePicker'
