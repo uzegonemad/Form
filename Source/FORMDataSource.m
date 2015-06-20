@@ -168,7 +168,10 @@ static const CGFloat FORMKeyboardAnimationDuration = 0.3f;
             identifier = FORMButtonFieldCellIdentifier;
             break;
 
-        case FORMFieldTypeCustom: abort();
+        case FORMFieldTypeCustom: {
+            NSLog(@"We couldn't find the registered cell identifier for the field with ID: %@", field.fieldID);
+            abort();
+        } break;
     }
 
     FORMBaseFieldCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
