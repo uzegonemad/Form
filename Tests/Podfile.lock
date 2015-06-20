@@ -1,10 +1,11 @@
 PODS:
-  - Hex (1.1.1)
+  - Hex (2.0)
   - HYP8601 (0.7.2)
   - HYPImagePicker (0.3)
   - HYPMathParser (0.4.1)
   - HYPNorwegianAccountNumber (1.2.1)
   - HYPNorwegianSSN (1.10.2)
+  - JSON (3.0.0)
   - NSDate-HYPString (0.2)
   - NSDictionary-ANDYSafeValue (0.3)
   - NSDictionary-HYPImmutable (0.2)
@@ -22,12 +23,13 @@ PODS:
   - UIViewController-HYPKeyboardToolbar (0.1)
 
 DEPENDENCIES:
-  - Hex
+  - Hex (from `git@github.com:3lvis/Hex.git`)
   - HYP8601
   - HYPImagePicker
   - HYPMathParser
   - HYPNorwegianAccountNumber
   - HYPNorwegianSSN
+  - JSON
   - NSDate-HYPString
   - NSDictionary-ANDYSafeValue
   - NSDictionary-HYPImmutable
@@ -42,13 +44,23 @@ DEPENDENCIES:
   - UIButton-ANDYHighlighted
   - UIViewController-HYPKeyboardToolbar
 
+EXTERNAL SOURCES:
+  Hex:
+    :git: git@github.com:3lvis/Hex.git
+
+CHECKOUT OPTIONS:
+  Hex:
+    :commit: feaf10c1205de24eebc646ffcd119a0d9ee62bf7
+    :git: git@github.com:3lvis/Hex.git
+
 SPEC CHECKSUMS:
-  Hex: acf6d0dc34658d3d44047a992bfd09190c87e6e7
+  Hex: 1800bd20206b93b10422d2289baa3787698825ad
   HYP8601: 0118757c1332620748c75e7218e7b6b849686d06
   HYPImagePicker: 5c6e463ec15ae6b647355eb11f3f310342616fbf
   HYPMathParser: 146a4981427a0b46cc9af823b210bfefdf0a7107
   HYPNorwegianAccountNumber: b0062d7419d217123dff0ef04f1931ed5f1e3bbf
   HYPNorwegianSSN: 1eb54f1488ac24cdd7d0aee34e10d0f826c27fc1
+  JSON: 55bac5febcd3064cac55355ee9aec0deb710043a
   NSDate-HYPString: b87cf854edd44ec1e186b32526c601502180846d
   NSDictionary-ANDYSafeValue: c15ff39a6b1b82a52ea277c64520c7b574715afc
   NSDictionary-HYPImmutable: 5ab45ed9d8127636467736b51700d886bfcc48db

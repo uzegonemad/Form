@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140496911B354A060006FD87 /* forms.json in Resources */ = {isa = PBXBuildFile; fileRef = 140496901B354A060006FD87 /* forms.json */; };
 		14153BA11B34C59F0016A76B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14153BA01B34C59F0016A76B /* AppDelegate.swift */; };
 		14153BA31B34C59F0016A76B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14153BA21B34C59F0016A76B /* Images.xcassets */; };
 		14153BA61B34C59F0016A76B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14153BA41B34C59F0016A76B /* LaunchScreen.xib */; };
@@ -155,6 +156,7 @@
 
 /* Begin PBXFileReference section */
 		0F976971F56B077A5DA2E58E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		140496901B354A060006FD87 /* forms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forms.json; sourceTree = "<group>"; };
 		140DC19B1B35406800CBA3B1 /* App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
 		14153B9C1B34C59F0016A76B /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14153B9F1B34C59F0016A76B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 		14153B9D1B34C59F0016A76B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				140496901B354A060006FD87 /* forms.json */,
 				140DC19B1B35406800CBA3B1 /* App-Bridging-Header.h */,
 				14153BA01B34C59F0016A76B /* AppDelegate.swift */,
 				14153BB91B34C5D80016A76B /* SampleController.swift */,
@@ -773,6 +776,7 @@
 			files = (
 				14153BA61B34C59F0016A76B /* LaunchScreen.xib in Resources */,
 				14153BA31B34C59F0016A76B /* Images.xcassets in Resources */,
+				140496911B354A060006FD87 /* forms.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

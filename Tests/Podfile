@@ -2,7 +2,7 @@ use_frameworks!
 
 link_with 'App', 'Tests'
 
-pod 'Hex'
+pod 'Hex', git: 'git@github.com:3lvis/Hex.git'
 pod 'HYP8601'
 pod 'HYPImagePicker'
 pod 'HYPMathParser'
@@ -21,3 +21,4 @@ pod 'NSString-HYPWordExtractor'
 pod 'NSString-ZENInflections'
 pod 'UIButton-ANDYHighlighted'
 pod 'UIViewController-HYPKeyboardToolbar'
+pod 'JSON'
