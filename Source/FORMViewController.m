@@ -5,6 +5,7 @@
 #import "NSJSONSerialization+ANDYJSONFile.h"
 #import "UIViewController+HYPKeyboardToolbar.h"
 #import "NSObject+HYPTesting.h"
+#import "UIColor+Hex.h"
 
 @interface FORMViewController ()
 
@@ -64,6 +65,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.collectionView.backgroundColor = [UIColor colorFromHex:@"DAE2EA"];
+
+    self.collectionView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
 
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
