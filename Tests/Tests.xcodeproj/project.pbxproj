@@ -61,6 +61,7 @@
 		144A28EA1A99B2CF004A9086 /* FORMValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 144A28B91A99B2CF004A9086 /* FORMValidator.m */; };
 		144B80291AA882DB009C69DC /* section-field-position.json in Resources */ = {isa = PBXBuildFile; fileRef = 144B80281AA882DB009C69DC /* section-field-position.json */; };
 		1452EB621AA9BCFC0002863A /* FORMDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1452EB611AA9BCFC0002863A /* FORMDefaultStyle.m */; };
+		147F19D11B3552BB0070A075 /* MultilineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F19D01B3552BB0070A075 /* MultilineCell.swift */; };
 		1492C05A1A9F740900D80D91 /* dynamic.json in Resources */ = {isa = PBXBuildFile; fileRef = 1492C0591A9F740900D80D91 /* dynamic.json */; };
 		149C29211A9A23DD00F88B91 /* FORMFieldValueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 149C29111A9A23DD00F88B91 /* FORMFieldValueTests.m */; };
 		149C29221A9A23DD00F88B91 /* FORMFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 149C29121A9A23DD00F88B91 /* FORMFieldTests.m */; };
@@ -258,6 +259,7 @@
 		144B80281AA882DB009C69DC /* section-field-position.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "section-field-position.json"; sourceTree = "<group>"; };
 		1452EB601AA9BCFC0002863A /* FORMDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FORMDefaultStyle.h; sourceTree = "<group>"; };
 		1452EB611AA9BCFC0002863A /* FORMDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FORMDefaultStyle.m; sourceTree = "<group>"; };
+		147F19D01B3552BB0070A075 /* MultilineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultilineCell.swift; sourceTree = "<group>"; };
 		1492C0591A9F740900D80D91 /* dynamic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dynamic.json; sourceTree = "<group>"; };
 		149C29111A9A23DD00F88B91 /* FORMFieldValueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FORMFieldValueTests.m; sourceTree = "<group>"; };
 		149C29121A9A23DD00F88B91 /* FORMFieldTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FORMFieldTests.m; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				140496901B354A060006FD87 /* forms.json */,
 				140DC19B1B35406800CBA3B1 /* App-Bridging-Header.h */,
 				14153BA01B34C59F0016A76B /* AppDelegate.swift */,
+				147F19D01B3552BB0070A075 /* MultilineCell.swift */,
 				14153BB91B34C5D80016A76B /* SampleController.swift */,
 				14153BA21B34C59F0016A76B /* Images.xcassets */,
 				14153BA41B34C59F0016A76B /* LaunchScreen.xib */,
@@ -952,6 +955,7 @@
 				14DB625F1B35448D001CEBA1 /* FORMFieldValue.m in Sources */,
 				14DB62601B35448D001CEBA1 /* FORMGroup.m in Sources */,
 				14DB62611B35448D001CEBA1 /* FORMSection.m in Sources */,
+				147F19D11B3552BB0070A075 /* MultilineCell.swift in Sources */,
 				14DB62621B35448D001CEBA1 /* FORMTarget.m in Sources */,
 				14DB62631B35448D001CEBA1 /* DDMathEvaluator+FORM.m in Sources */,
 				14DB62641B35448D001CEBA1 /* FORMPostalCodeManager.m in Sources */,
@@ -1068,7 +1072,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "App/App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1085,7 +1089,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "App/App-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
