@@ -35,8 +35,6 @@ static NSString * const FORMGroupBackgroundColorKey = @"background_color";
     NSString *style = [self.styles valueForKey:FORMGroupBackgroundColorKey];
     if ([style length] > 0) {
         color = [[UIColor alloc] initWithHex:style];
-    } else {
-        color = [UIColor whiteColor];
     }
     
     self.groupColor = color;
