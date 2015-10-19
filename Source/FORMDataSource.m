@@ -306,7 +306,7 @@ static const CGFloat FORMKeyboardAnimationDuration = 0.3f;
     } else if (field) {
         width = floor(deviceWidth * (field.size.width / 100.0f));
 
-        if (field.type == FORMFieldTypeCustom) {
+        if (field.type == FORMFieldTypeCustom || field.size.height > 0) {
             height = field.size.height * FORMFieldCellItemHeight;
         } else {
             height = FORMFieldCellItemHeight;
