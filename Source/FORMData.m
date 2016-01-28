@@ -1056,7 +1056,7 @@ includingHiddenFields:(BOOL)includingHiddenFields
 
         NSDictionary *sectionTemplate = [self.sectionTemplatesDictionary valueForKey:sectionTemplateID];
         NSData *archivedTemplate = [NSKeyedArchiver archivedDataWithRootObject:sectionTemplate];
-        NSMutableDictionary* templateSectionDictionary = [NSKeyedUnarchiver unarchiveObjectWithData:archivedTemplate];
+        NSMutableDictionary* templateSectionDictionary = [[NSKeyedUnarchiver unarchiveObjectWithData:archivedTemplate] mutableCopy];
         [templateSectionDictionary setValue:[NSString stringWithFormat:@"%@[%ld]", sectionTemplateID, (long)index] forKey:@"id"];
 
         NSArray *templateFields = [templateSectionDictionary andy_valueForKey:@"fields"];
