@@ -22,9 +22,12 @@ static const NSInteger FORMSelectMaxItemCount = 6;
     NSBundle *bundle = [NSBundle bundleWithPath: bundlePath];
 
     UITraitCollection *trait = [UITraitCollection traitCollectionWithDisplayScale:2.0];
-    self.iconImageView.image = [UIImage imageNamed:@"arrow_down"
-                                          inBundle:bundle
-                     compatibleWithTraitCollection:trait];
+    UIImage *arrowDownImage = [UIImage imageNamed:@"arrow_down"
+                                         inBundle:bundle
+                    compatibleWithTraitCollection:trait];
+    UIImage *arrowDownImageTemplate = [arrowDownImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.iconImageView.tintColor = [FORMFieldValueLabel appearance].textColor;
+    self.iconImageView.image = arrowDownImageTemplate;
     return self;
 }
 

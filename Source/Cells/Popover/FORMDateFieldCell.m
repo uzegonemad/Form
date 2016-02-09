@@ -95,7 +95,9 @@ static const CGSize FORMDatePopoverSize = { 320.0f, 284.0f };
         self.fieldValueLabel.text = nil;
     }
 
-    self.iconImageView.image = [self fieldIcon];
+    UIImage *fieldIconTemplate = [[self fieldIcon] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.iconImageView.tintColor = [FORMFieldValueLabel appearance].textColor;
+    self.iconImageView.image = fieldIconTemplate;
 }
 
 - (NSDateFormatterStyle)dateStyleForField:(FORMField *)field {
