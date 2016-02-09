@@ -306,7 +306,8 @@ static const CGFloat FORMKeyboardAnimationDuration = 0.3f;
     } else if (field) {
         width = floor(deviceWidth * (field.size.width / 100.0f));
 
-        if (field.type == FORMFieldTypeCustom || field.size.height > 0) {
+        // Handle custom heights EXCEPT for dynamic add buttons (because those default to 2x height)
+        if (field.size.height > 0 && !(field.type == FORMFieldTypeButton && field.size.height == 2.0f && [field.fieldID hyp_containsString:@".add"])) {
             height = field.size.height * FORMFieldCellItemHeight;
         } else {
             height = FORMFieldCellItemHeight;
