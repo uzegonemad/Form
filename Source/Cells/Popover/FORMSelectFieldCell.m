@@ -26,7 +26,7 @@ static const NSInteger FORMSelectMaxItemCount = 6;
                                          inBundle:bundle
                     compatibleWithTraitCollection:trait];
     UIImage *arrowDownImageTemplate = [arrowDownImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.iconImageView.tintColor = [FORMFieldValueLabel appearance].textColor;
+    self.iconImageView.tintColor = [FORMTextField appearance].textColor;
     self.iconImageView.image = arrowDownImageTemplate;
     return self;
 }

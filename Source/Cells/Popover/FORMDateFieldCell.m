@@ -96,7 +96,7 @@ static const CGSize FORMDatePopoverSize = { 320.0f, 284.0f };
     }
 
     UIImage *fieldIconTemplate = [[self fieldIcon] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.iconImageView.tintColor = [FORMFieldValueLabel appearance].textColor;
+    self.iconImageView.tintColor = [FORMTextField appearance].textColor;
     self.iconImageView.image = fieldIconTemplate;
 }
 
