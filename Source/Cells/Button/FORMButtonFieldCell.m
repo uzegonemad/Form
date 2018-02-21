@@ -1,6 +1,6 @@
 #import "FORMButtonFieldCell.h"
-#import "UIButton+ANDYHighlighted.h"
-@import Hex;
+#import "UIColor+FORMImage.h"
+#import "UIColor+Hex.h"
 
 static NSString * const FORMButtonTitleLabelFontKey = @"font";
 static NSString * const FORMButtonTitleLabelFontSizeKey = @"font_size";
@@ -55,6 +55,12 @@ static NSString * const FORMButtonBackgroundColorKey = @"background_color";
     self.button.enabled = !field.disabled;
     self.disabled = field.disabled;
     self.headingLabel.hidden = YES;
+    
+    if ([field.accessibilityLabel length] > 0) {
+        self.button.accessibilityLabel = field.accessibilityLabel;
+    } else {
+        self.button.accessibilityLabel = self.headingLabel.text;
+    }
 
     [self.button setTitle:field.title forState:UIControlStateNormal];
 }
@@ -123,7 +129,8 @@ static NSString * const FORMButtonBackgroundColorKey = @"background_color";
     if ([style length] > 0) {
         highlightedTitleColor = [[UIColor alloc] initWithHex:style];
     }
-    self.button.highlightedTitleColor = highlightedTitleColor;
+
+    [self.button setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
 }
 
 - (void)setBorderColor:(UIColor *)borderColor {
@@ -139,7 +146,8 @@ static NSString * const FORMButtonBackgroundColorKey = @"background_color";
     if ([style length] > 0) {
         highlightedBackgroundColor = [[UIColor alloc] initWithHex:style];
     }
-    self.button.highlightedBackgroundColor = highlightedBackgroundColor;
+
+    [self.button setBackgroundImage:[highlightedBackgroundColor form_image] forState:UIControlStateHighlighted];
 }
 
 - (void)setTitleColor:(UIColor *)titleColor {
@@ -147,7 +155,8 @@ static NSString * const FORMButtonBackgroundColorKey = @"background_color";
     if ([style length] > 0) {
         titleColor = [[UIColor alloc] initWithHex:style];
     }
-    self.button.titleColor = titleColor;
+
+    [self.button setTitleColor:titleColor forState:UIControlStateNormal];
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {

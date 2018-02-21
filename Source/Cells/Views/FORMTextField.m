@@ -4,7 +4,7 @@
 
 #import "FORMTextFieldTypeManager.h"
 
-@import Hex;
+#import "UIColor+Hex.h"
 
 static const CGFloat FORMTextFieldClearButtonWidth = 30.0f;
 static const CGFloat FORMTextFieldClearButtonHeight = 20.0f;
@@ -239,14 +239,15 @@ static NSString * const FORMTextFieldPlusButtonColorKey = @"plus_button_color";
 
 - (BOOL)textFieldShouldBeginEditing:(FORMTextField *)textField {
     BOOL selectable = (textField.type == FORMTextFieldTypeSelect ||
-                       textField.type == FORMTextFieldTypeDate);
+                       textField.type == FORMTextFieldTypeDate ||
+                       !textField.readonly);
 
     if (selectable &&
         [self.textFieldDelegate respondsToSelector:@selector(textFormFieldDidBeginEditing:)]) {
         [self.textFieldDelegate textFormFieldDidBeginEditing:self];
     }
 
-    return !selectable;
+    return !textField.readonly && !selectable;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -285,7 +286,8 @@ static NSString * const FORMTextFieldPlusButtonColorKey = @"plus_button_color";
 
 - (BOOL)canBecomeFirstResponder {
     BOOL isTextField = (self.type != FORMTextFieldTypeSelect &&
-                        self.type != FORMTextFieldTypeDate);
+                        self.type != FORMTextFieldTypeDate &&
+                        !self.readonly);
 
     return (isTextField && self.enabled) ?: [super canBecomeFirstResponder];
 }
@@ -439,14 +441,17 @@ static NSString * const FORMTextFieldPlusButtonColorKey = @"plus_button_color";
 - (void)setValid:(BOOL)valid {
     _valid = valid;
 
-    if (!self.isEnabled) return;
-
-    if (valid) {
-        self.backgroundColor = self.validBackgroundColor;
-        self.layer.borderColor = self.validBorderColor.CGColor;
-    } else {
+    if (!valid) {
         self.backgroundColor = self.invalidBackgroundColor;
         self.layer.borderColor = self.invalidBorderColor.CGColor;
+    } else {
+        if (self.isEnabled) {
+            self.backgroundColor = self.validBackgroundColor;
+            self.layer.borderColor = self.validBorderColor.CGColor;
+        } else {
+            self.backgroundColor = self.disabledBackgroundColor;
+            self.layer.borderColor = self.disabledBorderColor.CGColor;
+        }
     }
 }
 

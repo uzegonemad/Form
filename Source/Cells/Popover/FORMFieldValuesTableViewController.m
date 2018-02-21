@@ -1,8 +1,6 @@
 #import "FORMFieldValuesTableViewController.h"
-
 #import "FORMFieldValue.h"
 #import "FORMField.h"
-#import "FORMFieldValuesTableViewHeader.h"
 #import "FORMFieldValueCell.h"
 
 @interface FORMFieldValuesTableViewController ()
@@ -16,17 +14,30 @@
 #pragma mark - Getters
 
 - (FORMFieldValuesTableViewHeader *)headerView {
-	if (_headerView) return _headerView;
+    if (_headerView) return _headerView;
 
     _headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:FORMFieldValuesTableViewHeaderIdentifier];
 
-	return _headerView;
+    return _headerView;
 }
 
 #pragma mark - Setters
 
 - (void)setField:(FORMField *)field {
     _field = field;
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        UIBarButtonItem *clear = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Clear", nil) style:UIBarButtonItemStylePlain target:self action:@selector(clearButtonDidTap)];
+        BOOL shouldShowDoneButton = (_field.type == FORMFieldTypeDate || _field.type == FORMFieldTypeDateTime || _field.type == FORMFieldTypeTime);
+        if (shouldShowDoneButton) {
+            UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonDidTap)];
+            self.navigationItem.rightBarButtonItems = @[done, clear];
+        } else {
+            self.navigationItem.rightBarButtonItem = clear;
+        }
+
+        self.title = self.field.title;
+    }
 
     self.values = [NSArray arrayWithArray:field.values];
     self.headerView.field = field;
@@ -44,6 +55,11 @@
 
     [self.tableView registerClass:[FORMFieldValueCell class] forCellReuseIdentifier:FORMFieldValueCellIdentifer];
     [self.tableView registerClass:[FORMFieldValuesTableViewHeader class] forHeaderFooterViewReuseIdentifier:FORMFieldValuesTableViewHeaderIdentifier];
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonDidTap)];
+        self.navigationItem.leftBarButtonItem = cancel;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -55,6 +71,32 @@
     }];
 }
 
+#pragma mark - Navigation Buttons Actions
+
+- (void)cancelButtonDidTap {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)doneButtonDidTap {
+    FORMFieldValue *fieldValue = [FORMFieldValue new];
+    fieldValue.value = @YES;
+
+    if ([self.delegate respondsToSelector:@selector(fieldValuesTableViewController:didSelectedValue:)]) {
+        [self.delegate fieldValuesTableViewController:self
+                                     didSelectedValue:fieldValue];
+    }
+}
+
+- (void)clearButtonDidTap {
+    FORMFieldValue *fieldValue = [FORMFieldValue new];
+    fieldValue.value = @NO;
+
+    if ([self.delegate respondsToSelector:@selector(fieldValuesTableViewController:didSelectedValue:)]) {
+        [self.delegate fieldValuesTableViewController:self
+                                     didSelectedValue:fieldValue];
+    }
+}
+
 #pragma mark - TableViewDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -64,13 +106,14 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    NSInteger headerHeight;
+    CGFloat headerHeight = 0.0f;
+
     if (self.customHeight > 0.0f) {
         headerHeight = self.customHeight;
     } else if (self.field.info) {
         [self.headerView setField:self.field];
         headerHeight = [self.headerView labelHeight];
-    } else {
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         headerHeight = FORMFieldValuesCellHeight;
     }
 

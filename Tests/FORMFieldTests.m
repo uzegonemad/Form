@@ -20,6 +20,9 @@
     [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
     FORMField *field = [[FORMField alloc] initWithDictionary:@{@"id": @"first_name",
                                                                @"title": @"First name",
+                                                               @"placeholder": @"placeholder",
+                                                               @"info": @"info",
+                                                               @"accessibility_label": @"Accessibility label",
                                                                @"value": @"John Malkobitch",
                                                                @"type": @"name",
                                                                @"size": @{@"width": @30,
@@ -35,8 +38,11 @@
     XCTAssertEqualObjects(field.position, @0);
     XCTAssertEqualObjects(field.fieldID, @"first_name");
     XCTAssertEqualObjects(field.title, @"First name");
+    XCTAssertEqualObjects(field.placeholder, @"placeholder");
+    XCTAssertEqualObjects(field.info, @"info");
     XCTAssertEqualObjects(field.value, @"John Malkobitch");
     XCTAssertEqualObjects(field.typeString, @"name");
+    XCTAssertEqualObjects(field.accessibilityLabel, @"Accessibility label");
     XCTAssertTrue(field.type == FORMFieldTypeText);
     XCTAssertTrue(CGSizeEqualToSize(field.size, CGSizeMake(30, 1)));
     XCTAssertFalse(field.disabled);
@@ -45,6 +51,7 @@
 
     field = [[FORMField alloc] initWithDictionary:@{@"id": @"start_date",
                                                     @"title": @"Start date",
+                                                    @"accessibility_label": @"Accessibility label",
                                                     @"type": @"date",
                                                     @"minimum_date":@"2000-01-01T00:00:00.002Z",
                                                     @"maximum_date":@"2015-01-01T00:00:00.002Z",
@@ -62,6 +69,7 @@
     XCTAssertEqualObjects([field.minimumDate hyp_dateString], @"2000-01-01");
     XCTAssertEqualObjects([field.maximumDate hyp_dateString], @"2015-01-01");
     XCTAssertEqualObjects([field.value hyp_dateString], @"2014-01-01");
+    XCTAssertEqualObjects(field.accessibilityLabel, @"Accessibility label");
 
     XCTAssertTrue(CGSizeEqualToSize(field.size, CGSizeMake(10, 4)));
     XCTAssertTrue(field.disabled);
@@ -70,6 +78,7 @@
 
     field = [[FORMField alloc] initWithDictionary:@{@"id": @"start_time",
                                                     @"title": @"Start time",
+                                                    @"accessibility_label": @"Accessibility label",
                                                     @"type": @"time",
                                                     @"minimum_date":@"2000-01-01T00:00:00.002Z",
                                                     @"maximum_date":@"2015-01-01T00:00:00.002Z",
@@ -87,6 +96,7 @@
     XCTAssertEqualObjects([field.minimumDate hyp_dateString], @"2000-01-01");
     XCTAssertEqualObjects([field.maximumDate hyp_dateString], @"2015-01-01");
     XCTAssertEqualObjects([field.value hyp_dateString], @"2014-01-01");
+    XCTAssertEqualObjects(field.accessibilityLabel, @"Accessibility label");
 
     XCTAssertTrue(CGSizeEqualToSize(field.size, CGSizeMake(10, 4)));
     XCTAssertTrue(field.disabled);
@@ -96,6 +106,7 @@
 
     field = [[FORMField alloc] initWithDictionary:@{@"id": @"dateAndTime",
                                                     @"title": @"Date and Time",
+                                                    @"accessibility_label": @"Accessibility label",
                                                     @"type": @"date_time",
                                                     @"minimum_date":@"2002-01-01T00:00:00.002Z",
                                                     @"maximum_date":@"2013-01-01T00:00:00.002Z",
@@ -113,9 +124,89 @@
     XCTAssertEqualObjects([field.minimumDate hyp_dateString], @"2002-01-01");
     XCTAssertEqualObjects([field.maximumDate hyp_dateString], @"2013-01-01");
     XCTAssertEqualObjects([field.value hyp_dateString], @"2011-01-01");
+    XCTAssertEqualObjects(field.accessibilityLabel, @"Accessibility label");
 
     XCTAssertTrue(CGSizeEqualToSize(field.size, CGSizeMake(15, 2)));
     XCTAssertFalse(field.disabled);
+    XCTAssertNil(field.validation);
+    XCTAssertFalse(field.hidden);
+    
+    NSArray *values = @[
+                        @{@"id": @0, @"title": @"Permanent"},
+                        @{@"id": @1, @"title": @"Temporary"},
+                      ];
+    field = [[FORMField alloc] initWithDictionary:@{@"id": @"contract_type",
+                                                    @"title": @"Contract type",
+                                                    @"accessibility_label": @"Accessibility label",
+                                                    @"type": @"select",
+                                                    @"values":values,
+                                                    @"value":@0,
+                                                    @"size": @{@"width": @10,
+                                                               @"height": @4}
+                                                    }
+                                         position:1
+                                         disabled:NO
+                                disabledFieldsIDs:@[@"contract_type"]];
+    XCTAssertNotNil(field);
+    XCTAssertEqualObjects(field.typeString, @"select");
+    XCTAssertTrue(field.type == FORMFieldTypeSelect);
+    
+    XCTAssertEqualObjects(field.value, @0);
+    XCTAssertEqualObjects(field.accessibilityLabel, @"Accessibility label");
+    
+    XCTAssertTrue(CGSizeEqualToSize(field.size, CGSizeMake(10, 4)));
+    XCTAssertTrue(field.disabled);
+    XCTAssertNil(field.validation);
+    XCTAssertFalse(field.hidden);
+    
+    values = @[
+                @{@"id": @"part_1", @"title": @"Part 1"},
+                @{@"id": @"part_2", @"title": @"Part 2"},
+              ];
+    field = [[FORMField alloc] initWithDictionary:@{@"id": @"segment_control",
+                                                    @"title": @"Segment Control",
+                                                    @"accessibility_label": @"Accessibility label",
+                                                    @"type": @"segment",
+                                                    @"values":values,
+                                                    @"value":@"part_1",
+                                                    @"size": @{@"width": @30,
+                                                               @"height": @1}
+                                                    }
+                                         position:1
+                                         disabled:NO
+                                disabledFieldsIDs:@[@"segment_control"]];
+    XCTAssertNotNil(field);
+    XCTAssertEqualObjects(field.typeString, @"segment");
+    XCTAssertTrue(field.type == FORMFieldTypeSegment);
+    
+    XCTAssertEqualObjects(field.value, @"part_1");
+    XCTAssertEqualObjects(field.accessibilityLabel, @"Accessibility label");
+    
+    XCTAssertTrue(CGSizeEqualToSize(field.size, CGSizeMake(30, 1)));
+    XCTAssertTrue(field.disabled);
+    XCTAssertNil(field.validation);
+    XCTAssertFalse(field.hidden);
+    
+    field = [[FORMField alloc] initWithDictionary:@{@"id": @"switch_control",
+                                                    @"title": @"Switch Control",
+                                                    @"accessibility_label": @"Accessibility label",
+                                                    @"type": @"switch",
+                                                    @"value": @YES,
+                                                    @"size": @{@"width": @30,
+                                                               @"height": @1}
+                                                    }
+                                         position:1
+                                         disabled:NO
+                                disabledFieldsIDs:@[@"switch_control"]];
+    XCTAssertNotNil(field);
+    XCTAssertEqualObjects(field.typeString, @"switch");
+    XCTAssertTrue(field.type == FORMFieldTypeSwitch);
+    
+    XCTAssertEqualObjects(field.value, @YES);
+    XCTAssertEqualObjects(field.accessibilityLabel, @"Accessibility label");
+    
+    XCTAssertTrue(CGSizeEqualToSize(field.size, CGSizeMake(30, 1)));
+    XCTAssertTrue(field.disabled);
     XCTAssertNil(field.validation);
     XCTAssertFalse(field.hidden);
 }
@@ -169,6 +260,15 @@
 
     field.value = @"";
     XCTAssertNil(field.value);
+}
+
+- (void)testDefaultInputType {
+    FORMField *field = [[FORMField alloc] initWithDictionary:@{@"id" : @"number",
+                                                               @"type" : @"number"}
+                                                    position:0
+                                                    disabled:NO
+                                           disabledFieldsIDs:nil];
+    XCTAssertEqualObjects(field.inputTypeString, @"number");
 }
 
 @end

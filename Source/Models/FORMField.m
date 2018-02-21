@@ -33,9 +33,14 @@ static NSString * const FORMFormatterSelector = @"formatString:reverse:";
     _title = NSLocalizedString([dictionary andy_valueForKey:@"title"], nil);
     _typeString  = [dictionary andy_valueForKey:@"type"];
     _hidden = [[dictionary andy_valueForKey:@"hidden"] boolValue];
+    _readonly = [[dictionary andy_valueForKey:@"readonly"] boolValue];
     _type = [self typeFromTypeString:self.typeString];
     _inputTypeString = [dictionary andy_valueForKey:@"input_type"];
+    if (_inputTypeString.length == 0) {
+        _inputTypeString = _typeString;
+    }
     _info = NSLocalizedString([dictionary andy_valueForKey:@"info"], nil);
+    _placeholder = NSLocalizedString([dictionary andy_valueForKey:@"placeholder"], nil);
     NSNumber *width = [dictionary andy_valueForKey:@"size.width"] ?: @100;
     NSNumber *height = [dictionary andy_valueForKey:@"size.height"]?: @1;
     _size = CGSizeMake([width floatValue], [height floatValue]);
@@ -75,6 +80,8 @@ static NSString * const FORMFormatterSelector = @"formatString:reverse:";
     NSDictionary *styles = [dictionary andy_valueForKey:@"styles"];
 
     _styles = styles;
+    
+    _accessibilityLabel = NSLocalizedString([dictionary andy_valueForKey:@"accessibility_label"], nil);
 
     BOOL shouldDisable = (disabled || [disabledFieldsIDs containsObject:_fieldID]);
 
@@ -133,6 +140,9 @@ static NSString * const FORMFormatterSelector = @"formatString:reverse:";
         case FORMFieldTypeText:
         case FORMFieldTypeSelect:
         case FORMFieldTypeButton:
+        case FORMFieldTypeSpacer:
+        case FORMFieldTypeSegment:
+        case FORMFieldTypeSwitch:
         case FORMFieldTypeCustom:
             break;
     }
@@ -172,6 +182,9 @@ static NSString * const FORMFormatterSelector = @"formatString:reverse:";
             return self.value;
 
         case FORMFieldTypeButton:
+        case FORMFieldTypeSpacer:
+        case FORMFieldTypeSegment:
+        case FORMFieldTypeSwitch:
         case FORMFieldTypeCustom:
             return nil;
     }
@@ -243,6 +256,12 @@ static NSString * const FORMFormatterSelector = @"formatString:reverse:";
         return FORMFieldTypeCount;
     } else if ([typeString isEqualToString:@"button"]) {
         return FORMFieldTypeButton;
+    } else if ([typeString isEqualToString:@"spacer"]) {
+        return FORMFieldTypeSpacer;
+    } else if ([typeString isEqualToString:@"segment"]) {
+        return FORMFieldTypeSegment;
+    } else if ([typeString isEqualToString:@"switch"]) {
+        return FORMFieldTypeSwitch;
     } else {
         return FORMFieldTypeCustom;
     }
@@ -351,8 +370,8 @@ static NSString * const FORMFormatterSelector = @"formatString:reverse:";
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"\n — Field: %@ —\n title: %@\n info: %@\n size: %@\n position: %@\n fieldValue: %@\n type: %@\n values: %@\n disabled: %@\n initiallyDisabled: %@\n minimumDate: %@\n maximumDate: %@\n validations: %@\n formula: %@\n valid: %@\n sectionSeparator: %@\n",
-            self.fieldID, self.title, self.info, NSStringFromCGSize(self.size), self.position,
+    return [NSString stringWithFormat:@"\n — Field: %@ —\n title: %@\n info: %@\n placeholder: %@\n size: %@\n position: %@\n fieldValue: %@\n type: %@\n values: %@\n disabled: %@\n initiallyDisabled: %@\n minimumDate: %@\n maximumDate: %@\n validations: %@\n formula: %@\n valid: %@\n sectionSeparator: %@\n",
+            self.fieldID, self.title, self.info, self.placeholder, NSStringFromCGSize(self.size), self.position,
             self.value, self.typeString, self.values, (self.disabled) ? @"YES" : @"NO", (self.initiallyDisabled) ? @"YES" : @"NO", self.minimumDate,
             self.maximumDate, self.validation, self.formula, (self.valid) ? @"YES" : @"NO", (self.sectionSeparator) ? @"YES" : @"NO"];
 }

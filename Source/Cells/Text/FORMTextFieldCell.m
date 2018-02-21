@@ -2,7 +2,7 @@
 
 #import "FORMTooltipView.h"
 
-@import Hex;
+#import "UIColor+Hex.h"
 
 static NSString * const FORMHideTooltips = @"FORMHideTooltips";
 static const CGFloat FORMTooltipViewMinimumWidth = 90.0f;
@@ -177,6 +177,8 @@ static NSString * const FORMTooltipBackgroundColorKey = @"tooltip_background_col
 - (void)updateWithField:(FORMField *)field {
     [super updateWithField:field];
 
+    [self validate];
+
     self.textField.hidden          = (field.sectionSeparator);
     self.textField.inputValidator  = [self.field inputValidator];
     self.textField.formatter       = [self.field formatter];
@@ -187,6 +189,14 @@ static NSString * const FORMTooltipBackgroundColorKey = @"tooltip_background_col
     self.textField.rawText         = [self rawTextForField:field];
     self.textField.info            = field.info;
     self.textField.styles          = field.styles;
+    self.textField.placeholder     = field.disabled ? nil : field.placeholder;
+    self.textField.readonly        = field.readonly;
+    
+    if ([field.accessibilityLabel length] > 0) {
+        self.textField.accessibilityLabel = field.accessibilityLabel;
+    } else {
+        self.textField.accessibilityLabel = self.headingLabel.text;
+    }
 }
 
 - (void)validate {

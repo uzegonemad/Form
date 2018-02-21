@@ -7,6 +7,9 @@
 #import "FORMSelectFieldCell.h"
 #import "FORMDateFieldCell.h"
 #import "FORMButtonFieldCell.h"
+#import "FORMSpacerFieldCell.h"
+#import "FORMSegmentFieldCell.h"
+#import "FORMSwitchFieldCell.h"
 #import "FORMFieldValue.h"
 #import "HYPParsedRelationship.h"
 
@@ -19,8 +22,7 @@
 #import "NSDictionary+ANDYSafeValue.h"
 #import "NSDictionary+HYPNestedAttributes.h"
 #import "NSString+HYPRelationshipParser.h"
-
-@import Hex;
+#import "UIColor+Hex.h"
 
 static const CGFloat FORMDispatchTime = 0.05f;
 
@@ -95,9 +97,9 @@ static const CGFloat FORMKeyboardAnimationDuration = 0.3f;
     if (_collapsedGroups) return _collapsedGroups;
 
     _collapsedGroups = [NSMutableArray new];
-    
+
     NSMutableArray *indexPaths = [NSMutableArray new];
-    
+
     [self.formData.groups enumerateObjectsUsingBlock:^(FORMGroup *formGroup, NSUInteger idx, BOOL *stop) {
         if (formGroup.collapsed) {
             if (![_collapsedGroups containsObject:@(idx)]) {
@@ -180,7 +182,25 @@ static const CGFloat FORMKeyboardAnimationDuration = 0.3f;
             [collectionView registerClass:[FORMButtonFieldCell class]
                forCellWithReuseIdentifier:identifier];
             break;
-
+            
+        case FORMFieldTypeSpacer:
+            identifier = FORMSpacerFieldCellIdentifier;
+            [collectionView registerClass:[FORMSpacerFieldCell class]
+               forCellWithReuseIdentifier:identifier];
+            break;
+        
+        case FORMFieldTypeSegment:
+            identifier = [NSString stringWithFormat:@"%@-%@", FORMSegmentFieldCellIdentifier, field.fieldID];
+            [collectionView registerClass:[FORMSegmentFieldCell class]
+               forCellWithReuseIdentifier:identifier];
+            break;
+        
+        case FORMFieldTypeSwitch:
+            identifier = [NSString stringWithFormat:@"%@-%@", FORMSwitchFieldCellIdentifier, field.fieldID];
+            [collectionView registerClass:[FORMSwitchFieldCell class]
+               forCellWithReuseIdentifier:identifier];
+            break;
+        
         case FORMFieldTypeCustom: abort();
     }
 
@@ -203,7 +223,7 @@ static const CGFloat FORMKeyboardAnimationDuration = 0.3f;
     if (kind == UICollectionElementKindSectionHeader) {
         FORMGroup *group = self.formData.groups[indexPath.section];
         FORMGroupHeaderView *headerView;
-        
+
         NSString *identifier = [NSString stringWithFormat:@"%@-%@", FORMHeaderReuseIdentifier, group.groupID];
         [collectionView registerClass:[FORMGroupHeaderView class]
            forSupplementaryViewOfKind:UICollectionElementKindSectionHeader

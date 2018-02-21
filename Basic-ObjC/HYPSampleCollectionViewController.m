@@ -12,7 +12,7 @@
 #import "NSObject+HYPTesting.h"
 #import "UIViewController+HYPKeyboardToolbar.h"
 #import "NSJSONSerialization+ANDYJSONFile.h"
-@import Hex;
+#import "UIColor+Hex.h"
 
 @interface HYPSampleCollectionViewController () <HYPImagePickerDelegate>
 
@@ -181,11 +181,9 @@
 
 - (void)validateButtonAction {
     if ([self.dataSource isValid]) {
-        [[[UIAlertView alloc] initWithTitle:@"Everything is valid, you get a candy!"
-                                    message:nil
-                                   delegate:nil
-                          cancelButtonTitle:@"No, thanks"
-                          otherButtonTitles:nil, nil] show];
+        UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Everything is valid, you get a candy!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [controller addAction:[UIAlertAction actionWithTitle:@"No, thanks" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:controller animated:YES completion:nil];
     } else {
         [self.dataSource validate];
     }

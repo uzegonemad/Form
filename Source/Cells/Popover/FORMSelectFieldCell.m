@@ -65,6 +65,13 @@ static const NSInteger FORMSelectMaxItemCount = 6;
     } else {
         self.fieldValueLabel.text = nil;
     }
+
+    if ([field.accessibilityLabel length] > 0) {
+        self.fieldValueLabel.accessibilityLabel = field.accessibilityLabel;
+    } else {
+        self.fieldValueLabel.accessibilityLabel = field.title;
+    }
+    self.fieldValueLabel.accessibilityValue = self.fieldValueLabel.text;
 }
 
 #pragma mark - FORMPopoverFormFieldCell
@@ -77,7 +84,7 @@ static const NSInteger FORMSelectMaxItemCount = 6;
         CGSize currentSize = FORMSelectPopoverSize;
 
         CGFloat labelHeight = floorf(self.fieldValuesController.headerView.labelHeight);
-        CGSize customSize = CGSizeMake(currentSize.width, (FORMFieldValuesCellHeight * self.field.values.count) + labelHeight + FORMTitleLabelY);
+        CGSize customSize = CGSizeMake(currentSize.width, (FORMFieldValuesCellHeight * self.field.values.count) + labelHeight + FORMInfoLabelY);
 
         self.fieldValuesController.preferredContentSize = customSize;
     }

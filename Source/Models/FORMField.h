@@ -16,7 +16,10 @@ typedef NS_ENUM(NSInteger, FORMFieldType) {
     FORMFieldTypeFloat,
     FORMFieldTypeNumber,
     FORMFieldTypeButton,
+    FORMFieldTypeSpacer,
     FORMFieldTypeCount,
+    FORMFieldTypeSegment,
+    FORMFieldTypeSwitch,
     FORMFieldTypeCustom
 };
 
@@ -25,7 +28,9 @@ typedef NS_ENUM(NSInteger, FORMFieldType) {
 @property (nonatomic) NSString *fieldID;
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *info;
+@property (nonatomic) NSString *placeholder;
 @property (nonatomic) BOOL hidden;
+@property (nonatomic) BOOL readonly;
 @property (nonatomic) CGSize size;
 @property (nonatomic) NSNumber *position;
 @property (nonatomic) id value;
@@ -42,6 +47,7 @@ typedef NS_ENUM(NSInteger, FORMFieldType) {
 @property (nonatomic) NSString *formula;
 @property (nonatomic) NSArray *targets;
 @property (nonatomic) NSDictionary *styles;
+@property (nonatomic) NSString *accessibilityLabel;
 
 @property (nonatomic) FORMSection *section;
 
